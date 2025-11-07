@@ -9,7 +9,7 @@ export default function CommunityPage() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/vitalab-high-resolution-logo-transparent-YRIAa2uo4kU2WWzQGNz9sZoDCxshpt.png"
+                src="/images/design-mode/vitalab-high-resolution-logo-transparent.png"
                 alt="VitaLab Logo"
                 className="h-8 w-auto"
               />
