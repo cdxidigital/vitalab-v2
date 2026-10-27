@@ -1,0 +1,36 @@
+name: VitaLab 3 smoke checks
+
+on:
+  pull_request:
+    paths:
+      - "public/vitalab3/**"
+      - "app/vitalab3/**"
+      - "vitalab3/**"
+      - ".github/workflows/vitalab3.yml"
+  push:
+    branches:
+      - "feature/vitalab-3-unified-beta-20261028"
+    paths:
+      - "public/vitalab3/**"
+      - "app/vitalab3/**"
+      - "vitalab3/**"
+      - ".github/workflows/vitalab3.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Scoring engine, catalogue and syntax
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Run VitaLab 3 verification
+        working-directory: vitalab3
+        run: npm run verify
